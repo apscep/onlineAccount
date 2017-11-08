@@ -12,6 +12,7 @@ public class enterPA {
 	public void EnterPersAcc() {
 	System.setProperty("webdriver.chrome.driver", "C:\\Selenium Driver\\chromedriver.exe");
 	wd = new ChromeDriver();	
+	wd.get("http://ukrposhta.ua/");
 		
 	}
 	
