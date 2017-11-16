@@ -12,7 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class enterPA {
+public class EnterPAChrome {
 	WebDriver wd;
 	String loginAbraam = "ukrpost@i.ua";
 	String passwordAbraam = "446655";
@@ -29,10 +29,10 @@ public class enterPA {
 	}
 	@Test (description = "This test will check condition of web site")
 	public void Loadsite () throws InterruptedException {
-	
-		
-	wd.get(ukrpostUrl);
+	wd.get(ukrpostUrl);	
 	Thread.sleep(1000);
+	String currentUrl = wd.getCurrentUrl();
+	Assert.assertEquals(currentUrl, "https://ukrposhta.ua/");
 	}
 	@Test (dependsOnMethods="Loadsite", description = "This test will enter personal account")
 	public void EnterPersAcc() throws InterruptedException {
@@ -61,7 +61,7 @@ public class enterPA {
 	public void LogoutPa () throws InterruptedException {
 	Thread.sleep(1000);	
 	wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).click();
-	wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).click();
+	
 	}
 	@Test (priority = 7, description = "Check logout")
 	public void checkingLogout () throws InterruptedException {
