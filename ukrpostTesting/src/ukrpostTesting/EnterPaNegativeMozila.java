@@ -1,29 +1,24 @@
 package ukrpostTesting;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class enterPA {
+public class EnterPaNegativeMozila {
 	WebDriver wd;
 	String loginAbraam = "ukrpost@i.ua";
-	String passwordAbraam = "446655";
+	String passwordAbraam = "4466551";
     String ukrpostUrl = "http://ukrposhta.ua/";
     
 	@BeforeClass (description = "Start Browser")
     public void RunBrowser () {
-	System.setProperty("webdriver.chrome.driver", "C:\\Selenium Driver\\chromedriver.exe");
-	ChromeOptions chromeOptions = new ChromeOptions();
-	chromeOptions.addArguments("--start-maximized");
-	wd = new ChromeDriver(chromeOptions);
+	System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Tester stuff\\geckodriver.exe");
+	wd = new FirefoxDriver();
 	
 	
 	}
@@ -34,6 +29,7 @@ public class enterPA {
 	wd.get(ukrpostUrl);
 	Thread.sleep(1000);
 	}
+	
 	@Test (dependsOnMethods="Loadsite", description = "This test will enter personal account")
 	public void EnterPersAcc() throws InterruptedException {
 	String parentWindow = wd.getWindowHandle();
@@ -48,31 +44,20 @@ public class enterPA {
 	Assert.assertEquals(currentUrl, "https://ukrposhta.ua/login");
 	Thread.sleep(2000);
 	}
-	@Test (dependsOnMethods="EnterPersAcc", description = "This test will login personal account")
+	
+	@Test (dependsOnMethods="EnterPersAcc", description = "This test will login personal account and failed")
 	public void LoginToPa() throws InterruptedException {
 	wd.findElement(By.xpath(".//*[@id='login-form-rcl']/form/div[1]/input")).sendKeys(loginAbraam);
 	wd.findElement(By.xpath(".//*[@id='login-form-rcl']/form/div[2]/input")).sendKeys(passwordAbraam);
 	Thread.sleep(500);
 	wd.findElement(By.xpath(".//*[@id='login-form-rcl']/form/input[1]")).click();
-	Thread.sleep(2500);
-	Assert.assertTrue(wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).isDisplayed());
-	}
-	@Test (dependsOnMethods="LoginToPa", description = "This test will log out from personal account")
-	public void LogoutPa () throws InterruptedException {
-	Thread.sleep(1000);	
-	wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).click();
-	wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).click();
-	}
-	@Test (priority = 7, description = "Check logout")
-	public void checkingLogout () throws InterruptedException {
 	Thread.sleep(2000);
-	String currentUrl = wd.getCurrentUrl();
-	Assert.assertEquals(currentUrl, "http://ukrposhta.ua/login?loggedout=true");
-
-		}
-	
+	String expectedErrorMessage = wd.findElement(By.xpath(".//*[@id='login-form-rcl']/span")).getText();
+	String actualErrorMessage = "Ћог≥н або пароль не в≥рн≥!";
+	Assert.assertEquals(expectedErrorMessage, actualErrorMessage);
+	}
 	@AfterClass
 	public void CloseBrowser(){
 		wd.quit();
-	}
+		}
 }
