@@ -2,13 +2,14 @@ package ukrpostTesting;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class EnterPaNegativeMozila {
+public class EnterPaNegativeChrome {
 	WebDriver wd;
 	String loginAbraam = "ukrpost@i.ua";
 	String passwordAbraam = "446652";
@@ -16,10 +17,11 @@ public class EnterPaNegativeMozila {
     
 	@BeforeClass (description = "Start Browser")
     public void RunBrowser () {
-	System.setProperty("webdriver.gecko.driver", "C:\\dev\\Selenium\\geckodriver.exe");
-	wd = new FirefoxDriver();
-	wd.manage().window().maximize();
-		}
+	System.setProperty("webdriver.chrome.driver", "C:\\dev\\Selenium\\chromedriver.exe");
+	ChromeOptions chromeOptions = new ChromeOptions();
+	chromeOptions.addArguments("--start-maximized");
+	wd = new ChromeDriver(chromeOptions);
+	}
 	
 	@Test (description = "This test will check condition of web site")
 	public void Loadsite () throws InterruptedException {

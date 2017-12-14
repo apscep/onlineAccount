@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="1" failed="1" ignored="0" total="12" passed="10">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="110076" started-at="2017-12-14T15:33:00Z" finished-at="2017-12-14T15:34:50Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="110076" started-at="2017-12-14T15:33:00Z" finished-at="2017-12-14T15:34:50Z">
+      <class name="ukrpostTesting.EnterPAChrome">
+        <test-method status="PASS" signature="RunBrowser()[pri:0, instance:ukrpostTesting.EnterPAChrome@724af044]" name="RunBrowser" is-config="true" duration-ms="2331" started-at="2017-12-14T17:33:00Z" description="Start Browser" finished-at="2017-12-14T17:33:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunBrowser -->
+        <test-method status="PASS" signature="Loadsite()[pri:0, instance:ukrpostTesting.EnterPAChrome@724af044]" name="Loadsite" duration-ms="19531" started-at="2017-12-14T17:33:03Z" description="This test will check condition of web site" finished-at="2017-12-14T17:33:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Loadsite -->
+        <test-method status="PASS" signature="LoginToPa()[pri:0, instance:ukrpostTesting.EnterPAChrome@724af044]" name="LoginToPa" duration-ms="5434" started-at="2017-12-14T17:33:22Z" description="This test will login personal account" depends-on-methods="ukrpostTesting.EnterPAChrome.Loadsite" finished-at="2017-12-14T17:33:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToPa -->
+        <test-method status="PASS" signature="LogoutPa()[pri:0, instance:ukrpostTesting.EnterPAChrome@724af044]" name="LogoutPa" duration-ms="3254" started-at="2017-12-14T17:33:28Z" description="This test will log out from personal account" depends-on-methods="ukrpostTesting.EnterPAChrome.LoginToPa" finished-at="2017-12-14T17:33:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoutPa -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:ukrpostTesting.EnterPAChrome@724af044]" name="CloseBrowser" is-config="true" duration-ms="744" started-at="2017-12-14T17:33:31Z" finished-at="2017-12-14T17:33:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- ukrpostTesting.EnterPAChrome -->
+      <class name="ukrpostTesting.EnterPaFirefox">
+        <test-method status="PASS" signature="RunBrowser()[pri:0, instance:ukrpostTesting.EnterPaFirefox@6767c1fc]" name="RunBrowser" is-config="true" duration-ms="2211" started-at="2017-12-14T17:33:32Z" description="Start Browser" finished-at="2017-12-14T17:33:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunBrowser -->
+        <test-method status="PASS" signature="Loadsite()[pri:0, instance:ukrpostTesting.EnterPaFirefox@6767c1fc]" name="Loadsite" duration-ms="22998" started-at="2017-12-14T17:33:34Z" description="This test will check condition of web site" finished-at="2017-12-14T17:33:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Loadsite -->
+        <test-method status="PASS" signature="LoginToPa()[pri:0, instance:ukrpostTesting.EnterPaFirefox@6767c1fc]" name="LoginToPa" duration-ms="5892" started-at="2017-12-14T17:33:57Z" description="This test will login personal account" depends-on-methods="ukrpostTesting.EnterPaFirefox.Loadsite" finished-at="2017-12-14T17:34:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToPa -->
+        <test-method status="PASS" signature="LogoutPa()[pri:0, instance:ukrpostTesting.EnterPaFirefox@6767c1fc]" name="LogoutPa" duration-ms="3577" started-at="2017-12-14T17:34:03Z" description="This test will log out from personal account" depends-on-methods="ukrpostTesting.EnterPaFirefox.LoginToPa" finished-at="2017-12-14T17:34:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LogoutPa -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:ukrpostTesting.EnterPaFirefox@6767c1fc]" name="CloseBrowser" is-config="true" duration-ms="451" started-at="2017-12-14T17:34:06Z" finished-at="2017-12-14T17:34:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- ukrpostTesting.EnterPaFirefox -->
+      <class name="ukrpostTesting.DropDown">
+        <test-method status="PASS" signature="RunBrowser()[pri:0, instance:ukrpostTesting.DropDown@c038203]" name="RunBrowser" is-config="true" duration-ms="2202" started-at="2017-12-14T17:34:07Z" description="Start Browser" finished-at="2017-12-14T17:34:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunBrowser -->
+        <test-method status="FAIL" signature="Loadsite()[pri:0, instance:ukrpostTesting.DropDown@c038203]" name="Loadsite" duration-ms="10712" started-at="2017-12-14T17:34:09Z" description="This test will check condition of web site" finished-at="2017-12-14T17:34:20Z">
+          <exception class="org.openqa.selenium.support.ui.UnexpectedTagNameException">
+            <message>
+              <![CDATA[Element should have been "select" but was "span"
+Build info: version: '3.8.0', revision: '924c4067df', time: '2017-11-30T11:37:19.049Z'
+System info: host: 'DESKTOP-LLG3SK2', ip: '192.168.152.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.support.ui.UnexpectedTagNameException: Element should have been "select" but was "span"
+Build info: version: '3.8.0', revision: '924c4067df', time: '2017-11-30T11:37:19.049Z'
+System info: host: 'DESKTOP-LLG3SK2', ip: '192.168.152.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_151'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.<init>(Select.java:47)
+	at ukrpostTesting.DropDown.Loadsite(DropDown.java:29)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:669)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:877)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1201)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:776)
+	at org.testng.TestRunner.run(TestRunner.java:634)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
+	at org.testng.TestNG.runSuites(TestNG.java:1161)
+	at org.testng.TestNG.run(TestNG.java:1129)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.support.ui.UnexpectedTagNameException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Loadsite -->
+        <test-method status="SKIP" signature="CheckElement()[pri:0, instance:ukrpostTesting.DropDown@c038203]" name="CheckElement" duration-ms="0" started-at="2017-12-14T17:34:20Z" description="This test will check dropdown page" depends-on-methods="ukrpostTesting.DropDown.Loadsite" finished-at="2017-12-14T17:34:20Z">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method DropDown.CheckElement()[pri:0, instance:ukrpostTesting.DropDown@c038203] depends on not successfully finished methods]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method DropDown.CheckElement()[pri:0, instance:ukrpostTesting.DropDown@c038203] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1092)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:776)
+	at org.testng.TestRunner.run(TestRunner.java:634)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:425)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:420)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:385)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:334)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1318)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1243)
+	at org.testng.TestNG.runSuites(TestNG.java:1161)
+	at org.testng.TestNG.run(TestNG.java:1129)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckElement -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:ukrpostTesting.DropDown@c038203]" name="CloseBrowser" is-config="true" duration-ms="392" started-at="2017-12-14T17:34:20Z" finished-at="2017-12-14T17:34:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- ukrpostTesting.DropDown -->
+      <class name="ukrpostTesting.EnterPaNegativeMozila">
+        <test-method status="PASS" signature="RunBrowser()[pri:0, instance:ukrpostTesting.EnterPaNegativeMozila@cc285f4]" name="RunBrowser" is-config="true" duration-ms="2157" started-at="2017-12-14T17:34:20Z" description="Start Browser" finished-at="2017-12-14T17:34:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunBrowser -->
+        <test-method status="PASS" signature="Loadsite()[pri:0, instance:ukrpostTesting.EnterPaNegativeMozila@cc285f4]" name="Loadsite" duration-ms="9490" started-at="2017-12-14T17:34:22Z" description="This test will check condition of web site" finished-at="2017-12-14T17:34:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Loadsite -->
+        <test-method status="PASS" signature="LoginToPa()[pri:0, instance:ukrpostTesting.EnterPaNegativeMozila@cc285f4]" name="LoginToPa" duration-ms="5232" started-at="2017-12-14T17:34:32Z" description="This test will login personal account" depends-on-methods="ukrpostTesting.EnterPaNegativeMozila.Loadsite" finished-at="2017-12-14T17:34:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToPa -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:ukrpostTesting.EnterPaNegativeMozila@cc285f4]" name="CloseBrowser" is-config="true" duration-ms="404" started-at="2017-12-14T17:34:37Z" finished-at="2017-12-14T17:34:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- ukrpostTesting.EnterPaNegativeMozila -->
+      <class name="ukrpostTesting.EnterPaNegativeChrome">
+        <test-method status="PASS" signature="RunBrowser()[pri:0, instance:ukrpostTesting.EnterPaNegativeChrome@8bd1b6a]" name="RunBrowser" is-config="true" duration-ms="1934" started-at="2017-12-14T17:34:37Z" description="Start Browser" finished-at="2017-12-14T17:34:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RunBrowser -->
+        <test-method status="PASS" signature="Loadsite()[pri:0, instance:ukrpostTesting.EnterPaNegativeChrome@8bd1b6a]" name="Loadsite" duration-ms="5336" started-at="2017-12-14T17:34:39Z" description="This test will check condition of web site" finished-at="2017-12-14T17:34:45Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Loadsite -->
+        <test-method status="PASS" signature="LoginToPa()[pri:0, instance:ukrpostTesting.EnterPaNegativeChrome@8bd1b6a]" name="LoginToPa" duration-ms="5050" started-at="2017-12-14T17:34:45Z" description="This test will login personal account" depends-on-methods="ukrpostTesting.EnterPaNegativeChrome.Loadsite" finished-at="2017-12-14T17:34:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginToPa -->
+        <test-method status="PASS" signature="CloseBrowser()[pri:0, instance:ukrpostTesting.EnterPaNegativeChrome@8bd1b6a]" name="CloseBrowser" is-config="true" duration-ms="713" started-at="2017-12-14T17:34:50Z" finished-at="2017-12-14T17:34:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CloseBrowser -->
+      </class> <!-- ukrpostTesting.EnterPaNegativeChrome -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

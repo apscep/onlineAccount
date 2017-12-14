@@ -1,10 +1,7 @@
 package ukrpostTesting;
 
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -19,57 +16,42 @@ public class EnterPaFirefox {
     
 	@BeforeClass (description = "Start Browser")
     public void RunBrowser () {
-	System.setProperty("webdriver.gecko.driver", "C:\\Program Files\\Tester stuff\\geckodriver.exe");
+	System.setProperty("webdriver.gecko.driver", "C:\\dev\\Selenium\\geckodriver.exe");
 	wd = new FirefoxDriver();
+	wd.manage().window().maximize();
+		}
 	
-	
-	}
 	@Test (description = "This test will check condition of web site")
 	public void Loadsite () throws InterruptedException {
-	
-		
-	wd.get(ukrpostUrl);
+	wd.get(ukrpostUrl);	
 	Thread.sleep(1000);
-	}
-	
-	@Test (dependsOnMethods="Loadsite", description = "This test will enter personal account")
-	public void EnterPersAcc() throws InterruptedException {
-	String parentWindow = wd.getWindowHandle();
-	System.out.println(parentWindow);
-	wd.findElement(By.xpath("html/body/div[4]/div/ul/li[3]/a")).click();
-	Thread.sleep(2000);
-	//Switch to new tab
-	for (String childTab:wd.getWindowHandles()) {
-		wd.switchTo().window(childTab);
-				}
 	String currentUrl = wd.getCurrentUrl();
-	Assert.assertEquals(currentUrl, "https://ukrposhta.ua/login");
-	Thread.sleep(2000);
-	}
-	
-	@Test (dependsOnMethods="EnterPersAcc", description = "This test will login personal account")
-	public void LoginToPa() throws InterruptedException {
-	wd.findElement(By.xpath(".//*[@id='login-form-rcl']/form/div[1]/input")).sendKeys(loginAbraam);
-	wd.findElement(By.xpath(".//*[@id='login-form-rcl']/form/div[2]/input")).sendKeys(passwordAbraam);
+	Assert.assertEquals(currentUrl, "http://ukrposhta.ua/");
 	Thread.sleep(500);
-	wd.findElement(By.xpath(".//*[@id='login-form-rcl']/form/input[1]")).click();
-	Thread.sleep(2500);
-	Assert.assertTrue(wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).isDisplayed());
-	}
+	wd.findElement(By.xpath("//*[@id=\"main-wrap\"]/div[1]/div/ul/li[6]/a")).click();
+		String currentUrl2 = wd.getCurrentUrl();
+	Assert.assertEquals(currentUrl2, "http://ukrposhta.ua/login");
+	Thread.sleep(500);
+		}
 	
+	@Test (dependsOnMethods="Loadsite", description = "This test will login personal account")
+	public void LoginToPa() throws InterruptedException {
+	wd.findElement(By.xpath("//*[@id=\"login-form\"]/form/div[1]/div/input")).sendKeys(loginAbraam);
+	wd.findElement(By.xpath(".//*[@id=\"login-form\"]/form/div[2]/div/input")).sendKeys(passwordAbraam);
+	Thread.sleep(500);
+	wd.findElement(By.xpath("//*[@id=\"login-submit\"]")).click();
+	Thread.sleep(2500);
+	Assert.assertTrue(wd.findElement(By.xpath("//*[@id=\"main-wrap\"]/div[3]/div/div/div[2]/div[1]/h3")).isDisplayed());
+	wd.findElement(By.xpath("//*[@id=\"main-wrap\"]/div[3]/div/div/div[2]/div[1]/h3")).getText().equals("Особистий кабінет");
+	}
 	@Test (dependsOnMethods="LoginToPa", description = "This test will log out from personal account")
 	public void LogoutPa () throws InterruptedException {
 	Thread.sleep(1000);	
-	wd.findElement(By.xpath(".//*[@id='primary']/div[2]/div[1]/div[2]/p[2]/a")).click();
+	wd.findElement(By.xpath("//*[@id=\"main-wrap\"]/div[1]/div/ul/li[6]/a")).click();
 	
 	}
-	@Test (priority = 7, description = "Check logout")
-	public void checkingLogout () throws InterruptedException {
-	Thread.sleep(2000);
-	String currentUrl = wd.getCurrentUrl();
-	Assert.assertEquals(currentUrl, "http://ukrposhta.ua/login?loggedout=true");
+	
 
-		}
 	
 	@AfterClass
 	public void CloseBrowser(){
